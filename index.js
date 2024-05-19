@@ -27,11 +27,11 @@ function updateWeather(response) {
   iconElement.innerHTML = `
     <img src="${response.data.condition.icon_url}" class="emoji" />
   `;
+  console.log(response.data.condition.icon_url);
 }
 
 function formatDate(date) {
   let minutes = date.getMinutes();
-  console.log(minutes);
   let hours = date.getHours();
   let days = [
     "Sunday",
