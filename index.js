@@ -16,12 +16,17 @@ function updateWeather(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
 
+  let iconElement = document.querySelector("#icon");
+
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = Math.round(temperature);
   humidityElement.innerHTML = `${humidity}%`;
   windspeedElement.innerHTML = `${windspeed}km/h`;
   descriptionElement.innerHTML = description;
   timeElement.innerHTML = formatDate(date);
+  iconElement.innerHTML = `
+    <img src="${response.data.condition.icon_url}" class="emoji" />
+  `;
 }
 
 function formatDate(date) {
