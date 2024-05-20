@@ -66,4 +66,30 @@ function changeCity(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", changeCity);
 
+function changeForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+    <div class="weather-forecast-day">
+      <div class="forecast-day">${day}</div>
+    <div class = "forecast-icon"><img
+      src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png"
+      alt=""
+      width="50"
+    /></div>
+    <div class="forecast-temperature">
+      <span class="temp-max">20° </span>
+      <span class="temp-min"> 10°</span>
+    </div>
+    </div>`;
+  });
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
+
 searchCity("Vienna");
+changeForecast();

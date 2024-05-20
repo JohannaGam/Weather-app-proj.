@@ -1,3 +1,4 @@
+@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,21 +33,15 @@
         <span id ="time">Monday</span>, <span id="description"></span> <br/>
         Humidity: <strong id ="humidity"></strong>, Wind: <strong id="windspeed"></strong>
       </p>
-      </div>
+           </div>
       <div class="temperature">
         <span class ="emoji" id="icon"></span>
         <span class="temperature-value" id ="temperature-value"></span>
         <span class="temperature-unit">°C</span>
       </div>
       </div>
-      <div class="forecast">
-        <div class ="row">
-          <div class ="col-2">
-            <div class="forecast-day">Thu</div>
-            </div><img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-night.png" alt="" width="50"/>
-            <div class ="forecast-temperature"><span class="temp-max">20° </span><span class="temp-min"> 10°</span></div>          
-          </div>
-        </div>
+      <div class="forecast" id="forecast">
+      </div>
       </main>
     <footer>
       This project was coded by
@@ -62,6 +57,7 @@
       and hosted on <a href="https://amazing-weatherapp.netlify.app">Netlify</a>
     </footer>
   </div>
+    </div>
     </body>
     <script src="index.js"></script>
   </body>
