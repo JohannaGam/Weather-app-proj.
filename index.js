@@ -28,6 +28,8 @@ function updateWeather(response) {
     <img src="${response.data.condition.icon_url}" class="emoji" />
   `;
   console.log(response.data.condition.icon_url);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -66,7 +68,15 @@ function changeCity(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", changeCity);
 
-function changeForecast() {
+function getForecast(city) {
+  let apiKey = "a0fa4tbdafo43564612e4338dfba95b2";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(changeForecast);
+}
+
+function changeForecast(response) {
+  console.log(response.data);
+
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
@@ -92,4 +102,3 @@ function changeForecast() {
 }
 
 searchCity("Vienna");
-changeForecast();
