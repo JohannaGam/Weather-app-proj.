@@ -70,7 +70,7 @@ searchFormElement.addEventListener("submit", changeCity);
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return days[date.getDay()];
 }
@@ -86,7 +86,7 @@ function changeForecast(response) {
   let forecastHtml = "";
 
   response.data.daily.forEach(function (day, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       forecastHtml =
         forecastHtml +
         `
